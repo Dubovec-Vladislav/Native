@@ -1,20 +1,14 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StatusBar, View, FlatList } from 'react-native'
+import { PostItem } from './src/entities/post'
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+    <View>
+      <FlatList />
+      <PostItem title={"Tittle1"} data={"12.08.2023"} />
+      <PostItem title={"Tittle2"} data={"26.07.2023"} />
+      <PostItem title={"Tittle3"} data={"14.02.2023"} />
+      <StatusBar barStyle="auto" />
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
