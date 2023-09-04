@@ -2,14 +2,15 @@ import React, { FC } from 'react'
 import styled from 'styled-components/native'
 
 interface PostItemProps {
+  imageUrl: string
   title: string,
   data: string
 }
 
-export const PostItem: FC<PostItemProps> = ({title, data}) => {
+export const PostItem: FC<PostItemProps> = ({ imageUrl, title, data }) => {
   return (
     <Post>
-      <PostImage source={{ uri: 'https://vignette.wikia.nocookie.net/simpsons/images/2/28/200px-Orville_Simpson.png/revision/latest?cb=20120325155243' }} />
+      <PostImage source={{ uri: imageUrl }} />
       <PostDetails>
         <PostTitle>{title}</PostTitle>
         <PostData>{data}</PostData>
@@ -29,6 +30,7 @@ const Post = styled.View`
 const PostImage = styled.Image`
   width: 100px;
   height: 100px;
+  margin-right: 15px;
 `;
 
 const PostDetails = styled.View`
@@ -38,7 +40,7 @@ const PostDetails = styled.View`
 
 const PostTitle = styled.Text`
   margin-bottom: 5px;
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 700;
 `;
 
